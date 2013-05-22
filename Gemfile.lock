@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    args_parser (0.1.4)
     backports (3.3.1)
     dotenv (0.7.0)
     em-websocket (0.5.0)
@@ -19,11 +18,9 @@ GEM
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
     json (1.8.0)
-    linda (0.0.3)
-      json
     multi_json (1.7.3)
     multi_xml (0.5.3)
-    phidgets-ffi (0.1.2)
+    phidgets-ffi (0.1.1)
       ffi (>= 1.0.9)
     rack (1.5.2)
     rack-protection (1.5.0)
@@ -55,10 +52,8 @@ GEM
       sinatra
       sinatra-cometio (>= 0.5.3)
       sinatra-websocketio (>= 0.2.6)
-    sinatra-rocketio-linda (0.0.6)
+    sinatra-rocketio-linda (0.0.3)
       event_emitter
-      hashie
-      linda
       sinatra
       sinatra-rocketio
     sinatra-websocketio (0.2.9)
@@ -80,8 +75,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  args_parser
   ffi
   foreman
-  phidgets-ffi
+  phidgets-ffi (= 0.1.1)
   sinatra-rocketio-linda
