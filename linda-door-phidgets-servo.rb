@@ -3,6 +3,7 @@ require 'rubygems'
 require 'bundler/setup'
 require 'phidgets-ffi'
 require 'sinatra/rocketio/linda/client'
+$stdout.sync = true
 
 servo = Phidgets::Servo.new
 
@@ -19,7 +20,7 @@ ts = linda.tuplespace["delta"]
 
 door_open = lambda{
   ts.take ["door", "open"] do |tuple|
-    puts tuple
+    p tuple
     if servo.attached? and tuple == ["door", "open"]
       servo.servos[0].position = 0
       sleep 2
