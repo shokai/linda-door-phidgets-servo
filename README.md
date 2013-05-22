@@ -28,9 +28,11 @@ Install as Service
 
 for launchd (Mac OSX)
 
-    % sudo foreman export launchd ~/Library/LaunchAgents/ --app linda-door -u `whoami`
+    % sudo foreman export launchd /Library/LaunchDaemons/ --app linda-door -u `whoami`
+    % sudo launchctl load -w /Library/LaunchDaemons/linda-door-servo-1.plist
 
 
 for upstart (Ubuntu)
 
     % sudo foreman export upstart /etc/init/ --app linda-door -d `pwd` -u `whoami`
+    % sudo service linda-door start
