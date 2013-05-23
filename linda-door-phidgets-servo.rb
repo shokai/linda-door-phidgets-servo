@@ -17,8 +17,9 @@ puts "connecting.. #{url}"
 linda = Sinatra::RocketIO::Linda::Client.new url
 ts = linda.tuplespace["delta"]
 
-door_open = lambda{
-  ts.take ["door", "open"] do |tuple|
+linda.io.on :connect do
+  puts "connect!! <#{io.session}>"
+  ts.watch ["door", "open"] do |tuple|
     p tuple
     if servo.attached? and tuple == ["door", "open"]
       servo.servos[0].position = 0
@@ -26,13 +27,12 @@ door_open = lambda{
       servo.servos[0].position = 180
       ts.write ["door", "open", "success"]
     end
-    door_open.call
   end
-}
+end
 
-linda.io.on :connect do
-  puts "connect!! <#{io.session}>"
-  door_open.call
+linda.io.on :disconnect do
+  puts "disconnect.."
+  exit 1
 end
 
 loop do
