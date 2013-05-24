@@ -32,8 +32,6 @@ end
 
 linda.io.on :disconnect do
   puts "disconnect.."
-  exit 1
 end
 
-loop do
-end
+linda.wait
