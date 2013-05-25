@@ -9,9 +9,9 @@ open door-lock with RocketIO::Linda and Phidgets Servo-motor
 
 Dependencies
 ------------
-- (Phidgets Servo-motor)[http://www.phidgets.com]
+- [Phidgets Servo-motor](http://www.phidgets.com)
 - Ruby 1.8.7 ~ 2.0.0
-- (LindaBase)[https://github.com/shokai/linda-base]
+- [LindaBase](https://github.com/shokai/linda-base)
 
 
 Install Dependencies
