@@ -19,7 +19,7 @@ linda = Sinatra::RocketIO::Linda::Client.new url
 ts = linda.tuplespace[space]
 
 linda.io.on :connect do
-  puts "connect!! <#{io.session}>"
+  puts "connect!! <#{linda.io.session}> (#{linda.io.type})"
   ts.watch ["door", "open"] do |tuple|
     p tuple
     if servo.attached? and tuple == ["door", "open"]
