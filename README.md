@@ -3,6 +3,8 @@ Linda Door (Phidgets Servo)
 open door-lock with RocketIO::Linda and Phidgets Servo-motor
 
 * https://github.com/shokai/linda-door-phidgets-servo
+* watch tuple ["door", "open"] and open door
+* then write tuple ["door", "open", "success"]
 
 
 Dependencies
