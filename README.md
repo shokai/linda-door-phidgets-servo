@@ -9,6 +9,7 @@ Dependencies
 ------------
 - (Phidgets Servo-motor)[http://www.phidgets.com]
 - Ruby 1.8.7 ~ 2.0.0
+- (LindaBase)[https://github.com/shokai/linda-base]
 
 
 Install Dependencies
