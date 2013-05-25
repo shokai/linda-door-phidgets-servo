@@ -12,10 +12,11 @@ servo.on_attach do |device, obj|
   device.servos[0].type = Phidgets::FFI::ServoType[:default]
 end
 
-url = ARGV.shift || "http://linda.masuilab.org"
+url =   ENV["LINDA_BASE"]  || ARGV.shift || "http://localhost:5000"
+space = ENV["LINDA_SPACE"] || "test"
 puts "connecting.. #{url}"
 linda = Sinatra::RocketIO::Linda::Client.new url
-ts = linda.tuplespace["delta"]
+ts = linda.tuplespace[space]
 
 linda.io.on :connect do
   puts "connect!! <#{io.session}>"

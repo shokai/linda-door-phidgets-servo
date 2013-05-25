@@ -10,6 +10,7 @@ Dependencies
 - (Phidgets Servo-motor)[http://www.phidgets.com]
 - Ruby 1.8.7 ~ 2.0.0
 
+
 Install Dependencies
 --------------------
 
@@ -20,7 +21,16 @@ Install Dependencies
 Run
 ---
 
-    % bundle exec ruby linda-door-phidgets-servo.rb "http://linda.example.com/TUPLE_SPACE/TUPLE"
+set ENV var "LINDA_BASE" and "LINDA_SPACE"
+
+    % export LINDA_BASE=http://linda.example.com
+    % export LINDA_SPACE=test
+    % bundle exec ruby linda-door-phidgets-servo.rb
+
+
+oneline
+
+    % LINDA_BASE=http://linda.example.com LINDA_SPACE=test  bundle exec ruby linda-door-phidgets-servo.rb
 
 
 Install as Service
